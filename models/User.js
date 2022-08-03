@@ -11,13 +11,9 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    // Need to setup firebase before utilizing this column
-    // group_id: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    // },
     username: {
       type: DataTypes.STRING,
+      allowNull: false
     },
     password: {
       type: DataTypes.STRING,

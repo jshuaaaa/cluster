@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const posts = require('./post.js');
 
-router.use("/post", posts);
+router.post('/timeline',  (req, res) => {
+    console.log('logic')
+})
 
 module.exports = router;

@@ -13,14 +13,8 @@ Groups.init(
     },
     group_name: {
       type: DataTypes.STRING,
-      allowNull: false
-    },
-    users: {
-      type: DataTypes.STRING,
-      references: {
-        model: 'users',
-        key: 'username'
-      }
+      allowNull: false,
+      unique: true
     }
   },
   {

@@ -9,6 +9,4 @@ Users.hasMany(Posts);
 
 Posts.hasMany(Comment);
 
-Groups.hasMany(Users);
-
-module.exports = { Users, Posts, Comment };
+module.exports = { Users, Posts, Comment, Groups };

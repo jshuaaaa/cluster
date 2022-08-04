@@ -37,15 +37,17 @@ router.get('/home', withAuth, async (req,res) => {
         result.get({ plain: true })
     );
 
+        const dataid = []
         const posts = []
         for(let i =0; i<10; i++) {
            let post =  array[Math.floor(Math.random() * array.length)]
+           dataid.push(post.id)
             posts.push(post)
         }
-
+        console.log(dataid)
         console.log({posts})
         res.render('home', 
-          {posts},
+          {posts, dataid},
         );
       } catch (err) {
         console.log(err);
@@ -76,6 +78,7 @@ router.get('/post/:id', async (req,res) => {
         req.session.save(()=> {
             req.session.post_id = req.params.id
         })
+
         res.render('post',{posted_by, post_content,comments} );
     } catch (err) {
         console.log(err)
@@ -84,25 +87,6 @@ router.get('/post/:id', async (req,res) => {
 
 })
 
-
-// try {
-
-//     const dbCommentData = await Comment.findAll({
-//         where: {
-//             on_post: req.session.post_id,
-//           },
-//     });
-
-//     const array = dbCommentData.map((result) =>
-//     result.get({ plain: true })
-// );
-//     req.session.save(()=> {
-//         req.session.post_id = req.params.id
-//     })
-//     res.render('post',{array} );
-// } catch {
-
-// }
 
 
 module.exports = router;

@@ -1,11 +1,14 @@
 const Users = require('./User');
 const Posts = require('./Post');
-const Comment = require('./Comment')
+const Comment = require('./Comment');
+const Groups = require('./Group');
 
 Posts.belongsTo(Users);
 
 Users.hasMany(Posts);
 
-Posts.hasMany(Comment)
+Posts.hasMany(Comment);
+
+Groups.hasMany(Users);
 
 module.exports = { Users, Posts, Comment };

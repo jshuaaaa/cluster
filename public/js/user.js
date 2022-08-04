@@ -9,5 +9,11 @@ data.forEach(element => {
 
 async function getPost(e) {
     const id = e.target.parentElement.id
+    if(id && id !== 'home') {
     window.location.href = `/post/${id}`
+    }
 }
+
+document.getElementById('home').addEventListener('click', function(){
+    window.location.href = '/home'
+})

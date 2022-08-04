@@ -1,5 +1,7 @@
 document.getElementById('comment').addEventListener('click', postComment)
-
+document.getElementById('home').addEventListener('click', function(){
+    window.location.href = '/home'
+})
 async function postComment(event) {
     const commentContent = document.getElementById('comment-data').value.trim()
 

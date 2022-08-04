@@ -88,11 +88,13 @@ router.get('/post/:id', async (req,res) => {
 })
 
 router.get('/home/:username', async (req,res) => {
+    const username = req.params.username
     const dbUserData = await Posts.findAll({
       where: {
         posted_by: req.params.username
       }
     });
+
   
     const posts = dbUserData.map((result) =>
     result.get({ plain: true })
@@ -100,8 +102,9 @@ router.get('/home/:username', async (req,res) => {
     
   
     res.render('user', 
-    {posts},
+    {posts, username},
     );
+
   })
 
 

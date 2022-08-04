@@ -32,6 +32,8 @@ data.forEach(element => {
 
 async function getPost(e) {
     const id = e.target.parentElement.id
+    if(id) {
     window.location.href = `/post/${id}`
+    }
 }
 

@@ -196,3 +196,70 @@ body {
     justify-content: center;
   }
 }
+
+#signup-submit {
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right, #4e15ab, #2d0c60, 
+    #391239, #66235a);
+    background-size: 200%;
+    font-size: 1.2rem;
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: ease-out 0.3s;
+    box-shadow: inset 0 0 0 0 #66235a;
+}
+
+#signup-submit:hover {
+    box-shadow: inset 100px 0 0 0 #66235a;
+}
+
+.label {
+    color: white;
+}
+
+input {
+    text-align: center;
+}
+#sine{
+    margin: 1rem 0;
+    transition: ease-out 0.3s;
+}
+
+#submit-login {
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right, #4e15ab, #2d0c60, 
+    #391239, #66235a);
+    background-size: 200%;
+    font-size: 1.2rem;
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: ease-out 0.3s;
+    box-shadow: inset 0 0 0 0 #66235a;
+}
+
+#submit-login:hover {
+    box-shadow: inset 100px 0 0 0 #66235a;
+}
+
+.label {
+    color: white;
+}
+
+#sine1{
+    margin: 1rem 0;
+    transition: ease-out 0.3s;
+}

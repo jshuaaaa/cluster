@@ -37,17 +37,15 @@ router.get('/home', withAuth,  async (req,res) => {
         result.get({ plain: true })
     );
 
-        const dataid = []
         const posts = []
         for(let i =0; i<10; i++) {
            let post =  array[Math.floor(Math.random() * array.length)]
-           dataid.push(post.id)
             posts.push(post)
         }
-        console.log(dataid)
+
         console.log({posts})
         res.render('home', 
-          {posts, dataid},
+          {posts},
         );
       } catch (err) {
         console.log(err);

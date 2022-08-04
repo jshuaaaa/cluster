@@ -12,10 +12,10 @@ Posts.init(
       autoIncrement: true
     },
     posted_by: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       references: {
         model: 'users',
-        key: 'id'
+        key: 'username'
       }
     },
     post_content: {

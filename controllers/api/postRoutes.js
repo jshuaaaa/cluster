@@ -8,7 +8,7 @@ router.post('/timeline-post',  async (req, res) => {
     const newPost = req.body
     const postCreation = await Posts.create({
         posted_by: req.session.user_id,
-        user_id: req.body.post_content
+        post_content: req.body.post_content,
     })
     res.status(200).json(newPost)
     } catch (err) {
@@ -25,6 +25,9 @@ router.post('/friend-request', async (req,res) => {
 
 })
 
+router.post('/comment', async (req,res) => {
+
+})
 
 
 

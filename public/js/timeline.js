@@ -1,5 +1,6 @@
 document.getElementById('post-timeline').addEventListener('click', postToTimeline)
 
+
 async function postToTimeline(event) {
     event.preventDefault(event)
     const post_content = document.getElementById('post').value.trim()
@@ -11,7 +12,7 @@ async function postToTimeline(event) {
             headers: { 'Content-Type': 'application/json' },
     })
     if (post.ok) {
-        // window.location.href = '/home'
+        window.location.href = '/home'
     } else {
         alert('Failed to log in please try again')
     }

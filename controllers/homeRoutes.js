@@ -47,8 +47,10 @@ router.get('/home',  async (req,res) => {
         }
 
         console.log({posts})
-        res.render('home',
-          {posts, dataid, groups},
+
+        res.render('home', 
+          {posts},
+
         );
       } catch (err) {
         console.log(err);

@@ -1,0 +1,9 @@
+<h1>{{posts.0.posted_by}}</h1>
+
+<h3>{{posts.0.posted_by}} Posts!</h3>
+
+    {{#each posts as |post|}}
+    {{> user-posts}}
+    {{/each}}
+
+<script src="/js/user.js"></script>

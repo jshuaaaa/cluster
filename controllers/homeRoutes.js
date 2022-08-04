@@ -87,6 +87,23 @@ router.get('/post/:id', async (req,res) => {
 
 })
 
+router.get('/home/:username', async (req,res) => {
+    const dbUserData = await Posts.findAll({
+      where: {
+        posted_by: req.params.username
+      }
+    });
+  
+    const posts = dbUserData.map((result) =>
+    result.get({ plain: true })
+  );
+    
+  
+    res.render('user', 
+    {posts},
+    );
+  })
+
 
 
 module.exports = router;

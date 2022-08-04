@@ -1,22 +1,8 @@
-<form action="/signup" method="post">
-<div class="field">
-  <label class="label">Name</label>
-  <div class="control">
-    <input class="input" type="text" placeholder="e.g Alex Smith">
-  </div>
-</div>
-
-<div class="field">
-  <label class="label">Email</label>
-  <div class="control">
-    <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
-  </div>
-</div>
-
+<form>
 <div class="field">
   <label class="label">Create Username</label>
   <div class="control">
-    <input class="input" type="username" placeholder="john123">
+    <input id="username" class="input" type="username" placeholder="john123">
   </div>
 </div>
 
@@ -24,14 +10,16 @@
 <div class="field">
   <label class="label">Password</label>
   <div class="control">
-    <input class="input" type="Password" placeholder="">
+    <input id="password" class="input" type="Password" placeholder="">
   </div>
 </div>
 
 <div class="field">
   <label class="label">Confirm Password</label>
   <div class="control">
-    <input class="input" type="Password" placeholder="">
+    <input id="confirm-password" class="input" type="Password" placeholder="">
   </div>
+  <button id="signup-submit">Sign Up</button>
 </div>
 </form>
+<script src="./js/signup.js"></script>

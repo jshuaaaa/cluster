@@ -5,7 +5,17 @@
     <nav>
         <ul class="headerNav">
             <li class="homeNavTitle">CLUSTER</li>
-            <li class="homeNavLogo">LOGO</li>
+            <li class="userProfileNav">
+            <div class="userProfile" id="user-profile">
+                <img class="profileImg" id="profileImage" src="../img/Ninja.png" alt="">
+                {{!-- <button class="userDirectProfile" id="user"></button> --}}
+                <div class="centerBox">
+    <input  class="postBox" type="text" id="post">
+    <button class="postBox postButt" id="post-timeline">Post</button>
+                </div>
+    
+    </div>
+            </li>
             <li class="homeNavTheme"><button type="button" class="themeSelector">THEME SELECTOR</button> <button id="logout">Logout</button></li>
         </ul>
     </nav>
@@ -64,12 +74,7 @@
             </li>
         </ul>
     </section>
-    <div id="user-profile">
-        <button id="user"></button>
-    <input type="text" id="post">
-    <button id="post-timeline">Post</button>
-
-    </div>
+    
     <section class="homeSections">
         <button type="button" class="hidden" id="backTimeline">BACK</button>
         <h1>Timeline</h1>
@@ -99,8 +104,7 @@
     </section>
 </div>
 
-<script src="js/logout.js"></script>
 <script src="js/timeline.js"></script>
 <script src="js/home.js"></script>
-
+<script src="js/logout.js"></script>
 

@@ -1,4 +1,4 @@
-html{
+html {
   height: 125%;
 }
 body {
@@ -22,10 +22,44 @@ body {
 
 .headerNav > li {
   text-align: center;
-  flex: 1 0 30%;
-  max-width: 35%;
+  flex: 1 0 15%;
+  /* max-width: 35%; */
   color: rgb(153, 75, 248);
+  position: relative;
+  right: 2%;
 }
+.postBox {
+  position: relative;
+
+  max-height: 8vh;
+  height: 8vh;
+  clear: none;
+}
+.userProfile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ .homeNavTitle + .userProfileNav {
+  margin-left: 4%;
+  flex-basis: 46%;
+  border: 1px solid whitesmoke;
+  background-color: rgba(66, 0, 148, 0.575);
+}
+
+.centerBox {
+  display: flex;
+  
+  position: relative;
+  margin-right: 15%;
+}
+.profileImg {
+  position: relative;
+  max-width: 20vw;
+  height: 20vh;
+  z-index: 0;
+}
+
 .headerNav > .homeNavTitle {
   padding-left: 8%;
   text-align: left;
@@ -40,7 +74,6 @@ body {
 }
 
 .sectionContainer {
-  
   display: flex;
   gap: 2%;
   margin: 2%;
@@ -49,14 +82,11 @@ body {
 
 .homeSections {
   height: 100vh;
- max-height: 100vh;
+  max-height: 100vh;
   border: 3px groove rgba(115, 0, 255, 0.575);
-  background-color: rgba(115, 0, 255, 0.575);
+  background-color: rgba(66, 0, 148, 0.575);
   overflow: scroll;
   flex: 1 1 30%;
-  
-
-  
 }
 .homeSections > * {
   -ms-overflow-style: none;
@@ -69,7 +99,7 @@ body {
   display: none;
 }
 .sectionContainer > section {
-  color: rgb(203, 175, 238);
+  color: rgb(198, 160, 245);
 }
 .sideSections {
   max-width: 20%;
@@ -140,6 +170,7 @@ input#button {
   cursor: pointer;
   font-size: 1em;
   font-family: Roboto, sans-serif;
+
   letter-spacing: 0.1em;
   text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.3);
   color: #fff;
@@ -164,4 +195,3 @@ input#button:focus {
   box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73,
     0px 2px 5px #999;
 }
-

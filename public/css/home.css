@@ -57,6 +57,11 @@
       position: relative;
       margin-left: 75%;
   }
+  #backTimeLine{
+    margin: 0%;
+    margin-left: 2%;
+    margin-top: 2%;
+  }
   
   #timeLineForm{
       height: 3vh;

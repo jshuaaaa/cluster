@@ -26,7 +26,7 @@ router.get('/signup', isLoggedIn, async (req,res) => {
     }
 })
 
-router.get('/home', withAuth, async (req,res) => {
+router.get('/home', withAuth,  async (req,res) => {
     try {
         res.status(200).render('home');
     } catch (err) {

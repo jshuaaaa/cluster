@@ -263,3 +263,15 @@ input {
     margin: 1rem 0;
     transition: ease-out 0.3s;
 }
+a {
+  color:white;
+  margin: 1rem 0;
+  transition: ease-out 0.3s;
+}
+a:hover{
+  color:purple;
+}
+nav{
+  display:flex;
+  justify-content:space-between;
+}

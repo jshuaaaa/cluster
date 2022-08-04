@@ -5,11 +5,9 @@ const withAuth = require('../../middleware/auth');
 
 router.post('/timeline-post', withAuth,  async (req, res) => {
     try {
-        const user = Users.findOne({
-            where: {id: req.users.id}
-          })
+
     const newPost = req.body
-    const postCreation = await Posts.create(user, newPost.post_content)
+    const postCreation = await Posts.create(newPost)
     res.status(200).json(newPost)
     } catch (err) {
         console.log(err)

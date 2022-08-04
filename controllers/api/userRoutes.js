@@ -1,14 +1,26 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { Users } = require('../../models');
+
+router.post('/signup', async (req, res) => {
+  try {
+    const newUser = await Users.create({
+      username: req.body.username,
+      password: req.body.password
+    });
+    res.status(201).json(newUser);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 router.post('/login', async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { username: req.body.username } });
+    const userData = await Users.findOne({ where: { username: req.body.username } });
 
     if (!userData) {
       res
         .status(400)
-        .json({ message: 'Incorrect username or password, please try again' });
+        .json({ message: 'Incorrect username or password, please try again.' });
       return;
     }
 
@@ -17,7 +29,7 @@ router.post('/login', async (req, res) => {
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: 'Incorrect username or password, please try again.' });
       return;
     }
 
@@ -29,7 +41,7 @@ router.post('/login', async (req, res) => {
     });
 
   } catch (err) {
-    res.status(400).json(err);
+    res.status(400).json({ message: 'oh noo'});
   }
 });
 

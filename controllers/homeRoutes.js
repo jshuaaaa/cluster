@@ -1,35 +1,37 @@
 const router = require('express').Router();
-const withAuth = require('../utils/auth');
+const withAuth = require('../middleware/auth');
+const isLoggedIn = require('../middleware/loggedIn');
 
-router.get('/', async (req, res) => {
-    if (req.session.logged_in) {
-        res.redirect('/home');
-        return;
+router.get('/', isLoggedIn, async (req, res) => {
+    try {
+        res.status(200).render('landingpage');   
+    } catch (err) {
+        res.status(500).json(err);
     }
-    
-    res.render('landingpage');
 });
 
-router.get('/login', async (req,res) => {
-    if (req.session.logged_in) {
-        res.redirect('/home');
-        return;
+router.get('/login', isLoggedIn, async (req,res) => {
+    try {
+        res.status(200).render('login');
+    } catch (err) {
+        res.status(500).json(err);
     }
-    
-    res.render('login')
 })
 
-router.get('/signup', async (req,res) => {
-    if (req.session.logged_in) {
-        res.redirect('/home');
-        return;
+router.get('/signup', isLoggedIn, async (req,res) => {
+    try {
+        res.status(200).render('signup')   
+    } catch (err) {
+        res.status(500).json(err);
     }
-    
-    res.render('signup')
 })
 
 router.get('/home', withAuth, async (req,res) => {
-    res.render('home')
+    try {
+        res.status(200).render('home');
+    } catch (err) {
+        res.status(500).json(err);
+    }
 })
 
 module.exports = router;

@@ -8,6 +8,7 @@ router.post('/signup', async (req, res) => {
       password: req.body.password
     });
     res.status(201).json(newUser);
+    res.render('home')
   } catch (err) {
     res.status(500).json(err);
   }

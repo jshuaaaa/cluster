@@ -1,7 +1,7 @@
-<form action="/login" method="post">
+<form>
     <div class="field">
   <p class="control has-icons-left has-icons-right">
-    <input class="input" type="email" placeholder="Email/Username">
+    <input class="input" id="username" placeholder="Username">
     <span class="icon is-small is-left">
       <i class="fas fa-envelope"></i>
     </span>
@@ -12,10 +12,12 @@
 </div>
 <div class="field">
   <p class="control has-icons-left">
-    <input class="input" type="password" placeholder="*****">
+    <input class="input" type="password" id="password" placeholder="*****">
     <span class="icon is-small is-left">
       <i class="fas fa-lock"></i>
     </span>
   </p>
+  <button id="submit-login">Log In</button>
 </div>
 </form>
+<script src="./js/login.js"></script>

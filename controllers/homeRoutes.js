@@ -31,14 +31,21 @@ router.get('/home', withAuth, async (req,res) => {
     try {
         const dbTimelineData = await Posts.findAll({
         });
-    
-        const posts = dbTimelineData.map((post) =>
-          post.get({ plain: true })
+
+        const array = dbTimelineData.map((result) =>
+        result.get({ plain: true })
+    );
+
+        const posts = []
+        for(let i =0; i<10; i++) {
+           let post =  array[Math.floor(Math.random() * array.length)]
+            posts.push(post)
+        }
+
+        console.log({posts})
+        res.render('home', 
+          {posts},
         );
-    
-        res.render('home', {
-          posts,
-        });
       } catch (err) {
         console.log(err);
         res.status(500).json(err);

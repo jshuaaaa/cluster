@@ -2,14 +2,15 @@ const data = document.querySelectorAll('.timeline-post')
 console.log(data)
 
 data.forEach(element => {
-    addEventListener("click", getPost)
+    element.addEventListener("click", getPost)
     console.log(element)
 })
 
 
 async function getPost(e) {
     const id = e.target.parentElement.id
-    if(id && id !== 'home') {
+    console.log(id)
+    if(id) {
     window.location.href = `/post/${id}`
     }
 }

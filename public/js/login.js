@@ -23,3 +23,8 @@ if(username && password) {
     alert("Please fill in all fields")
 }
 } 
+
+
+// document.getElementById('signup').addEventListener('click', function(){
+//     window.location.href = '/signup'
+// })

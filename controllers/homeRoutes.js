@@ -1,3 +1,4 @@
+const {Posts} = require('../models')
 const router = require('express').Router();
 const withAuth = require('../middleware/auth');
 const isLoggedIn = require('../middleware/loggedIn');
@@ -28,10 +29,22 @@ router.get('/signup', isLoggedIn, async (req,res) => {
 
 router.get('/home', withAuth, async (req,res) => {
     try {
-        res.status(200).render('home');
-    } catch (err) {
+        const dbTimelineData = await Posts.findAll({
+        });
+    
+        const posts = dbTimelineData.map((post) =>
+          post.get({ plain: true })
+        );
+    
+        res.render('home', {
+          posts,
+        });
+      } catch (err) {
+        console.log(err);
         res.status(500).json(err);
-    }
-})
+      }
+    });
+
+
 
 module.exports = router;

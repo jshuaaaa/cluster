@@ -1,2 +1,12 @@
 <button id="logout">Logout</button>
+<div id="user-profile">
+    <input type="text" id="post">
+    <button id="post-timeline">Post</button>
+</div>
+<div id="timeline">
+    {{#each posts as |post|}}
+    {{> timeline}}
+    {{/each}}
+</div>
 <script src="js/logout.js"></script>
+<script src="js/timeline.js"></script>

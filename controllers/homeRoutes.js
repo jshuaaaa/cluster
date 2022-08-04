@@ -49,7 +49,7 @@ router.get('/home',  async (req,res) => {
         console.log({posts})
 
         res.render('home', 
-          {posts},
+          {posts, groups},
 
         );
       } catch (err) {

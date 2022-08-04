@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="/css/home.css">
 
 <header class="homeHeader">
@@ -63,11 +64,17 @@
             </li>
         </ul>
     </section>
+    <div id="user-profile">
+    <input type="text" id="post">
+    <button id="post-timeline">Post</button>
+    </div>
     <section class="homeSections">
         <button type="button" class="hidden" id="backTimeline">BACK</button>
         <h1>Timeline</h1>
         <div id="timeline">
-            <form><input type="text" id="timeLineForm"></input> | <input  id="button" type="submit" value="POST"></form>
+    {{#each posts as |post|}}
+    {{> timeline}}
+    {{/each}}
 
         </div>
     </section>
@@ -90,16 +97,7 @@
     </section>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
+<script src="js/timeline.js"></script>
 <script src="js/home.js"></script>
 <script src="js/logout.js"></script>
+

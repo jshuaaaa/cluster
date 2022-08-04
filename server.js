@@ -4,6 +4,7 @@ const exphbs = require('express-handlebars');
 const routes = require("./controllers/index")
 const sequelize = require('./config/connection');
 const session = require('express-session');
+const cookieParser=require("cookie-parser");
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -22,6 +23,7 @@ const sess = {
   })
 };
 
+app.use(cookieParser())
 app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);
